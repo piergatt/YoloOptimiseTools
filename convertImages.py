@@ -2,17 +2,21 @@ import numpy as np
 import cv2
 import os
 
+# Directory containing the .npy files
 input_dir = 'val'
 output_dir = 'val_rgb'
 
+#Frame to convert
 npy_file = 'val/frame0000000.npy'
 
+# Resolution of image captured
 resolution = (346, 260)
 
 os.makedirs(output_dir, exist_ok=True)
 
 cv2.namedWindow("RGB Frame", cv2.WINDOW_NORMAL)
 
+# Iterate through all .npy files in the input directory
 for npy_file in os.listdir(input_dir):
     if npy_file.endswith('.npy'):
         # Load the events from the .npy file
